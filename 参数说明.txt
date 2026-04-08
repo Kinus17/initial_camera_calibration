@@ -1,0 +1,30 @@
+data0-8是相机标定的核心参数
+camera_matrix - 相机内参矩阵 - 3x3
+data0 - fx - 相机水平焦距
+data1 - 0
+data2 - cx - 图像中心点x坐标
+data3 - 0
+data4 - fy - 相机垂直焦距
+data5 - cy - 图像中心点y坐标
+data6 - 0
+data7 - 0
+data8 - 1
+
+new camera matrix(矫正之后的内参)
+同上 只是 0 2 4 5变成了新的参数
+去畸变后用这个矩阵 图像不变形
+
+camera distortion(畸变系数 - 5个)
+镜头都会有畸变 用5个数字来修正图像弯曲
+data0 - k1
+data1 - k2
+data3 - p1
+data4 - p2
+这五个数是镜头的弯曲矫正参数
+
+roi(有效图像区域) - 4个
+去畸变之后 图像的四周会有黑边 4个数字描述有效画面从哪里开始 到哪里结束
+data0 - x起点
+data1 - y起点
+data2 - 宽度
+data3 - 高度
